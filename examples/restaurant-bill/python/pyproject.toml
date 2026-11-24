@@ -1,0 +1,12 @@
+[project]
+name = "restaurant-bill"
+requires-python = ">=3.13"
+version = "0.1"
+
+[dependency-groups]
+dev = [
+    "pytest"
+]
+
+[tool.pytest.ini_options]
+pytonpath = ["."]
