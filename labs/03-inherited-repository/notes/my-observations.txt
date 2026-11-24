@@ -1,0 +1,3 @@
+git status - pokazuje obecną gałąź, to czy gałąź jest aktualna i rzeczy w commit
+git log - pokazuje historie commitów
+git status po utworzeniu pliku my-observations.txt pokazuje, że plik nie jest śledzony tj. plik nie jest zapisany w repozytorium
