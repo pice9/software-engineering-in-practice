@@ -1,0 +1,4 @@
+Pierwsza próba się nie powiodła, bo python nie miał dostępu do bibliotek wykorzystanych
+w kodzie programu. uv sync utworzył wirtualne środowisko w środku folderu i zainstalował
+w nim bibliotekę wymaganą przez program. Plik "devcontainer.json" zawiera polecenie 
+instalacji javy i go w sekcji "features"
