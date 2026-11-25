@@ -44,3 +44,33 @@ def test_calculate_bill():
     tip_rate = 0.15
 
     bill = calculate_bill(items, tip_rate)
+
+    assert bill["total"] == 46.74
+
+def test_calculate_bill_applies_tax_after_discount_on_large_order():
+    #Tax
+    subtotal = 60
+    discount = calculate_discount(subtotal)
+
+    tax = calculate_tax(subtotal - discount)
+
+    assert tax == 4.32
+
+    #Tip
+    subtotal = 60
+    discount = calculate_discount(subtotal)
+    tip_rate = 0.15
+
+    tip = calculate_tip(subtotal - discount, tip_rate)
+
+    assert tip == 8.1
+
+    #Total
+    items = [
+        ("Steak", 30, 2)
+    ]
+    tip_rate = 0.15
+
+    bill = calculate_bill(items, tip_rate)
+
+    assert bill["total"] == 66.42

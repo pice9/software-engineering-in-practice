@@ -19,7 +19,7 @@ def calculate_bill(items: list[tuple[str, float, int]], tip_rate: float) -> dict
     bill = {}
     bill["subtotal"] = calculate_subtotal(items)
     bill["discount"]= calculate_discount(bill["subtotal"])
-    bill["tax"] = calculate_tax(bill["subtotal"])
+    bill["tax"] = calculate_tax(bill["subtotal"] - bill["discount"])
     bill["tip"] = calculate_tip(bill["subtotal"]- bill["discount"], tip_rate)
     bill["total"] = round(bill["subtotal"] - bill["discount"] + bill["tax"] + bill["tip"], 2)
     return bill
