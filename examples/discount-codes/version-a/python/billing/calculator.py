@@ -36,6 +36,8 @@ def calculate_bill(
             code_discount = after_loyalty * 0.10
         elif discount_code == "SAVE5":
             code_discount = 5.0
+        elif discount_code == "SAVE20":
+            code_discount = after_loyalty * 0.20
         else:
             raise ValueError(f"unknown discount code: {discount_code}")
 

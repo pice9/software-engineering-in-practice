@@ -1,6 +1,7 @@
 DISCOUNT_CODES = {
     "SAVE10": lambda amount: amount * 0.10,
     "SAVE5": lambda amount: 5.0,
+    "SAVE20": lambda amount: amount * 0.20,
 }
 
 

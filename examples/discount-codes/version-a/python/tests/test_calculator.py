@@ -29,3 +29,10 @@ def test_save5_applies_flat_amount():
 def test_unknown_code_raises_value_error():
     with pytest.raises(ValueError):
         calculate_bill(SMALL_ORDER, 0.15, discount_code="BOGUS")
+
+
+def test_save20_applies_after_loyalty_discount():
+    bill = calculate_bill(LARGE_ORDER, 0.15, discount_code="SAVE20")
+
+    assert bill["discount"] == 16.8
+    assert bill["total"] == 53.14

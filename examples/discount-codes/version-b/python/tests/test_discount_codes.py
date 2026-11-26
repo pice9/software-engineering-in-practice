@@ -14,3 +14,7 @@ def test_save5_returns_flat_five():
 def test_unknown_code_raises_value_error():
     with pytest.raises(ValueError):
         apply_discount_code(100.0, "BOGUS")
+
+
+def test_save20_returns_twenty_percent():
+    assert apply_discount_code(100.0, "SAVE20") == 20
