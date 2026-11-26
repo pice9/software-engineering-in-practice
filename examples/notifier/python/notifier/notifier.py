@@ -18,5 +18,10 @@ class InMemoryNotifier:
         self.sent_messages.append(message)
 
 
+class SilentNotifier:
+    def send(self, message: str) -> None:
+        pass
+
+
 def send_receipt_ready(notifier: Notifier, order_id: str) -> None:
     notifier.send(f"Order {order_id} is ready.")
