@@ -1,3 +1,5 @@
+from billing.discount_codes import apply_discount_code
+
 DISCOUNT_THRESHOLD = 50.0
 LOYALTY_DISCOUNT_RATE = 0.10
 TAX_RATE = 0.08
@@ -32,14 +34,7 @@ def calculate_bill(
 
     code_discount = 0.0
     if discount_code is not None:
-        if discount_code == "SAVE10":
-            code_discount = after_loyalty * 0.10
-        elif discount_code == "SAVE5":
-            code_discount = 5.0
-        elif discount_code == "SAVE20":
-            code_discount = after_loyalty * 0.20
-        else:
-            raise ValueError(f"unknown discount code: {discount_code}")
+        code_discount = apply_discount_code(after_loyalty, discount_code)
 
     discount = loyalty_discount + code_discount
     tax = calculate_tax(subtotal - discount)
